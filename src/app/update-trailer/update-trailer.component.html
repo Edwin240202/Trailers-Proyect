@@ -1,0 +1,52 @@
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <div class="filter">
+                <a href="/datos"><i class="fas fa-angle-double-left" aria-hidden="true"></i>Go Back</a>
+            </div>
+        </div>
+
+        <div class="form-title text-center">
+            <h2 class="text-dark">MODIFICAR TRAILER</h2>
+            <span class="text-light">Utilice este formulario para Modificar los Trailer que han sido agregados.</span>
+        </div>
+
+        <form action="/api/users" method="PUT" id="add_user">
+            <div class="update_user">
+                <div class="form-group">
+                    <label for="titulo" class="text-light">Título</label>
+                    <input type="hidden" name="id" value="">
+                    <input type="text"  [(ngModel)]="movieU.titulo" name="titulo" value="" placeholder="Ingrese el Título del Trailer" required>
+                </div>
+                <div class="form-group">
+                    <label for="ano" class="text-light">Año</label>
+                    <input type="number" [(ngModel)]="movieU.ano" name="ano" value="" placeholder="Introduzca el Año del Trailer" required>
+                </div>
+                <div class="form-group">
+                    <label for="director" class="text-light">Director</label>
+                    <input type="text" [(ngModel)]="movieU.director" name="director" value="" placeholder="Nombre del Director" required>
+                </div>
+                <div class="form-group">
+                    <label for="actores" class="text-light">Actores</label>
+                    <input type="text" [(ngModel)]="movieU.actores" name="actores" value="" placeholder="Nombre/s de los Actor/es" required>
+                </div>
+                <div class="form-group">
+                    <label for="resena" class="text-light">Reseña</label>
+                    <input type="text" [(ngModel)]="movieU.resena" name="resena" value="" placeholder="Escriba una Reseña" required>
+                </div>
+                <div class="form-group">
+                    <label for="portada" class="text-light">Portada</label>
+                    <input type="text" [(ngModel)]="movieU.portada" name="portada" value="" placeholder="Link de la Imagen" required>
+                </div>
+                <div class="form-group">
+                    <label for="link" class="text-light">Link Trailer</label>
+                    <input type="text" [(ngModel)]="movieU.link" name="link" value="" placeholder="Link del Trailer" required>
+                </div>
+        
+                <div class="form-group">
+                    <button (click)="saveUpdate()" class="btn text-dark update">GUARDAR MODIFICACIÓN</button>
+                </div>
+            </div>
+        </form>
+
+    </div>

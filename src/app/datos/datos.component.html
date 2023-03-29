@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIEPLUS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!--Header-->
+    <header id="header">
+        <nav>
+            <div class="container">
+                <div class="filter left border-shadow2">
+                    <a href="/home"><i class="fas fa-angle-double-left" aria-hidden="true"></i>HOME</a>
+                </div>
+                <div class="text-center">
+                    <a href="/" class="nav-brand">ADMINISTRAR TRAILERS</a>
+                </div>
+                <div class="right border-shadow">
+                    <a href="/new-trailer">
+                        <span class="text-gradient">NUEVO TRAILER<i class="fa fa-ticket" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <!--/Header-->
+
+    <!--Main Site-->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav">
+
+                <div class="center">
+                    <input id="in" type="search" class="in"><button id="btn" class="bt">BUSCAR</button>
+                </div>
+
+            </div>
+
+            <!--form handling-->
+
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr class="up">
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Año</th>
+                            <th>Director</th>
+                            <th>Actores</th>
+                            <th>Reseña</th>
+                            <th>Portada</th>
+                            <th>Link Trailer</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let m of movies; let i = index">
+
+                            <tr>
+                                <td>{{i + 1}}</td>
+                                <td>{{ m?.titulo }}</td>
+                                <td>{{ m?.ano }}</td>
+                                <td>{{ m?.director }}</td>
+                                <td>{{ m?.actores }}</td>
+                                <td>{{ m?.resena }}</td>
+                                <td id="portada">
+                                    <img width="50px" src="{{ m?.portada }}" />
+                                </td>
+                                <td><a href="{{ m?.link }}" target="_blank">Ver Trailer</a></td>
+                                <td>
+                                    <a href="/update-trailer" class="btn border-shadow update">
+                                        <span class="text-gradient"><i class="fa fa-pencil"
+                                                aria-hidden="true"></i></span>
+                                    </a>
+                                    <a class="btn border-shadow delete" (click)="deleteMovie(m?._id)">
+                                        <span class="text-gradient"><i class="fa fa-times"
+                                                aria-hidden="true"></i></span>
+                                    </a>
+
+
+                                    <div class="card flex justify-content-center">
+                                        <p-button label="Check" icon="pi pi-check"></p-button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </form>
+        </div>
