@@ -10,37 +10,35 @@
             <h2 class="text-dark">MODIFICAR TRAILER</h2>
             <span class="text-light">Utilice este formulario para Modificar los Trailer que han sido agregados.</span>
         </div>
-
-        <form action="/api/users" method="PUT" id="add_user">
+        <form id="update_user" name="update">
             <div class="update_user">
                 <div class="form-group">
                     <label for="titulo" class="text-light">Título</label>
-                    <input type="hidden" name="id" value="">
-                    <input type="text"  [(ngModel)]="movieU.titulo" name="titulo" value="" placeholder="Ingrese el Título del Trailer" required>
+                    <input type="text" id="titulo" [(ngModel)]="movie.titulo" name="titulo" placeholder="Ingrese el Título del Trailer" />
                 </div>
                 <div class="form-group">
                     <label for="ano" class="text-light">Año</label>
-                    <input type="number" [(ngModel)]="movieU.ano" name="ano" value="" placeholder="Introduzca el Año del Trailer" required>
+                    <input type="number" [(ngModel)]="movie.ano" name="ano" placeholder="Introduzca el Año del Trailer" />
                 </div>
                 <div class="form-group">
                     <label for="director" class="text-light">Director</label>
-                    <input type="text" [(ngModel)]="movieU.director" name="director" value="" placeholder="Nombre del Director" required>
+                    <input type="text" [(ngModel)]="movie.director" name="director" placeholder="Nombre del Director" />
                 </div>
                 <div class="form-group">
                     <label for="actores" class="text-light">Actores</label>
-                    <input type="text" [(ngModel)]="movieU.actores" name="actores" value="" placeholder="Nombre/s de los Actor/es" required>
+                    <input type="text" [(ngModel)]="movie.actores" name="actores" placeholder="Nombre/s de los Actor/es" />
                 </div>
                 <div class="form-group">
                     <label for="resena" class="text-light">Reseña</label>
-                    <input type="text" [(ngModel)]="movieU.resena" name="resena" value="" placeholder="Escriba una Reseña" required>
+                    <input type="text" [(ngModel)]="movie.resena" name="resena" placeholder="Escriba una Reseña" />
                 </div>
                 <div class="form-group">
                     <label for="portada" class="text-light">Portada</label>
-                    <input type="text" [(ngModel)]="movieU.portada" name="portada" value="" placeholder="Link de la Imagen" required>
+                    <input type="text" [(ngModel)]="movie.portada" name="portada" placeholder="Link de la Imagen" />
                 </div>
                 <div class="form-group">
                     <label for="link" class="text-light">Link Trailer</label>
-                    <input type="text" [(ngModel)]="movieU.link" name="link" value="" placeholder="Link del Trailer" required>
+                    <input type="text" [(ngModel)]="movie.link" name="link" placeholder="Link del Trailer" />
                 </div>
         
                 <div class="form-group">
@@ -48,5 +46,4 @@
                 </div>
             </div>
         </form>
-
     </div>

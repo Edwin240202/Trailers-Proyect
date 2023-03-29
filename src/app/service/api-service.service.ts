@@ -20,8 +20,8 @@ export class ApiService {
     return this.http.request('POST', 'http://localhost:3000/api/users?redirect=false', { body });
   }
 
-  public saveMovieU(body: any){
-    return this.http.request('PUT', 'http://localhost:3000/api/users?redirect=false', { body });
+  public saveUpdateMovie(body: any){
+    return this.http.request('PUT', `http://localhost:3000/api/users/${body._id}?redirect=false`, { body });
   }
 
   public deleteMovie(id: string){

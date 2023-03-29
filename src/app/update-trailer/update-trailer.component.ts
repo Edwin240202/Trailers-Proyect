@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { map } from 'rxjs';
 import { ApiService } from '../service/api-service.service';
 
 @Component({
@@ -8,15 +10,23 @@ import { ApiService } from '../service/api-service.service';
 })
 export class UpdateTrailerComponent implements OnInit {
 
-  public movieU: any = {};
+  public movie: any = {};
 
-  constructor(private apiService: ApiService) { }
+  constructor(
+    private apiService: ApiService,
+    private router: ActivatedRoute) {
+  }
 
   public ngOnInit(): void {
+    this.router.queryParams.subscribe(data => {
+      console.log(data);
+      this.movie = data;
+    });
   }
 
   public saveUpdate(): void {
-    this.apiService.saveMovieU(this.movieU).subscribe((data: any) => {
+    console.log(this.movie)
+    this.apiService.saveUpdateMovie(this.movie).subscribe((data: any) => {
       console.log(data)
     })
   }

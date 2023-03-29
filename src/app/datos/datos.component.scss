@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
 
 :root{
-    --dark: #2b2d42;
+    --dark: #151516;
     --light: #adb5bd;
     --border: #dee2e6;
     --border-btn: #edf2f4;
@@ -180,12 +180,31 @@ i{
 }
 
 .table tr:hover{
-    background-color: #0660d6;
+    background-color: #adb5bd;
 }
 
 .table tr:hover td > a{
     box-shadow: none;
-    background-color: #0660d6;
+    background-color: #adb5bd;
+}
+
+.zoom {
+    padding: 50px;
+    background-color: green;
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+ .table .eliminar:hover{
+    color: #fff;
+    cursor: pointer;
+    background-color: #32383e;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
 }
 
 .up{
@@ -194,7 +213,7 @@ i{
 
 .table .thead-dark th{
     color: #fff;
-    background-color: var(--dark) ;
+    background-color: #32383e ;
     border-color: #32383e;
 }
 

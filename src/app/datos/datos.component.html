@@ -78,23 +78,18 @@
                                 </td>
                                 <td><a href="{{ m?.link }}" target="_blank">Ver Trailer</a></td>
                                 <td>
-                                    <a href="/update-trailer" class="btn border-shadow update">
+                                    <a [routerLink]="['/update-trailer']" [queryParams]="m"
+                                    routerLinkActive="router-link-active"  class="btn border-shadow update">
                                         <span class="text-gradient"><i class="fa fa-pencil"
                                                 aria-hidden="true"></i></span>
                                     </a>
-                                    <a class="btn border-shadow delete" (click)="deleteMovie(m?._id)">
-                                        <span class="text-gradient"><i class="fa fa-times"
-                                                aria-hidden="true"></i></span>
-                                    </a>
-
-
-                                    <div class="card flex justify-content-center">
-                                        <p-button label="Check" icon="pi pi-check"></p-button>
-                                    </div>
+                                    <app-alert [icon]="'fa-times'" class="eliminar" (clickHandler)="deleteMovie(m?._id)"></app-alert>
+                                    
                                 </td>
                             </tr>
                         </ng-container>
                     </tbody>
                 </table>
             </form>
+            
         </div>

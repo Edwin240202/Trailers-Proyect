@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../service/api-service.service';
 
 
@@ -11,7 +12,8 @@ export class DatosComponent implements OnInit {
 
   public movies:any = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.apiService.getMovies().subscribe((data: any) => {
@@ -27,4 +29,7 @@ export class DatosComponent implements OnInit {
     })
   }
 
+  public update(m:any): void{
+    this.router.navigate(['/update-trailer'], { state: { trailer: m}})
+  }
 }
